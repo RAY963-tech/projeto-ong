@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <title>Instituto Mãos que Transformam - Login</title>
+
+  <link
+    href="../css/style.css"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #F7FAF8;
+      color: #44515C;
+    }
+
+    h1 {
+      color: #075C38;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .login-card {
+      background-color: #FFFFFF;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 14px 35px rgba(18, 59, 93, 0.10);
+    }
+
+    /* Botão para mostrar/ocultar senha */
+    .position-relative button {
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+    }
+
+    .position-relative button:focus {
+      outline: 3px solid rgba(10, 150, 80, 0.25);
+      outline-offset: 2px;
+    }
+
+    /* =========================================
+       BOTÃO ENTRAR
+       ========================================= */
+
+    .btn-login {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+
+      width: 100% !important;
+      min-height: 48px;
+
+      padding: 0.65rem 1.5rem;
+
+      background-color: #075C38 !important;
+      border: 1px solid #075C38 !important;
+
+      color: #FFFFFF !important;
+
+      border-radius: 0.5rem;
+
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+
+      cursor: pointer;
+
+      opacity: 1 !important;
+      visibility: visible !important;
+
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn-login:hover {
+      background-color: #087541 !important;
+      border-color: #087541 !important;
+      color: #FFFFFF !important;
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 4px 12px rgba(7, 92, 56, 0.20);
+    }
+
+    .btn-login:focus {
+      background-color: #075C38 !important;
+      border-color: #075C38 !important;
+      color: #FFFFFF !important;
+
+      outline: 3px solid rgba(10, 150, 80, 0.25);
+      outline-offset: 2px;
+
+      box-shadow: none;
+    }
+
+    .btn-login:active {
+      background-color: #075C38 !important;
+      border-color: #075C38 !important;
+      color: #FFFFFF !important;
+
+      transform: translateY(0);
+    }
+
+    .btn-login i {
+      color: #FFFFFF !important;
+    }
+
+    /* Botão Entrar do menu */
+    .btn-outline-custom {
+      color: #075C38 !important;
+      border: 2px solid #075C38 !important;
+      background-color: transparent !important;
+
+      font-weight: 600;
+
+      border-radius: 0.5rem;
+
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .btn-outline-custom:hover,
+    .btn-outline-custom:focus {
+      background-color: #075C38 !important;
+      color: #FFFFFF !important;
+
+      box-shadow: 0 0 0 0.2rem #E9F8EF;
+    }
+
+    /* Botão Cadastre-se do menu */
+    .btn-primary-custom {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: #075C38 !important;
+      border: 1px solid #075C38 !important;
+
+      color: #FFFFFF !important;
+
+      font-weight: 600;
+
+      border-radius: 0.5rem;
+
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn-primary-custom:hover,
+    .btn-primary-custom:focus {
+      background-color: #087541 !important;
+      border-color: #087541 !important;
+      color: #FFFFFF !important;
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 4px 12px rgba(7, 92, 56, 0.20);
+    }
+
+    /* Campos do formulário */
+    .form-control {
+      border-color: #DBE6DF;
+    }
+
+    .form-control:focus {
+      border-color: #0A9650;
+      box-shadow: 0 0 0 0.2rem rgba(10, 150, 80, 0.15);
+    }
+
+    /* Mensagem de status */
+    #statusMessage {
+      min-height: 20px;
+    }
+
+    /* Link de cadastro */
+    .login-card a {
+      color: #0A9650;
+      font-weight: 600;
+    }
+
+    .login-card a:hover,
+    .login-card a:focus {
+      color: #075C38;
+    }
+
+    /* Rodapé */
+    footer a {
+      color: #44515C;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: #075C38;
+    }
+  </style>
+
+</head>
+
+<body data-page="login">
+
+  <!-- =========================================
+       CABEÇALHO
+       ========================================= -->
+
+  <header>
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
+      aria-label="Menu principal"
+    >
+
+      <div class="container">
+
+        <!-- Logo -->
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="index.html"
+        >
+
+          <img
+            src="../imagens/logo.png"
+            alt="Logo Instituto Mãos que Transformam"
+            height="48"
+          />
+
+          <span class="ms-2 fs-5 fw-semibold text-075C38">
+            Mãos que Transformam
+          </span>
+
+        </a>
+
+
+        <!-- Menu mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Abrir menu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+        >
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- Navegação -->
+        <div
+          class="collapse navbar-collapse"
+          id="navbarMenu"
+        >
+
+          <ul
+            class="navbar-nav ms-auto align-items-center"
+          >
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="index.html"
+              >
+                Início
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="projetos.html"
+              >
+                Projetos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="eventos.html"
+              >
+                Eventos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ajudar.html"
+              >
+                Como Ajudar
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="feedback.html"
+              >
+                Feedback
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-3">
+
+              <a
+                class="btn btn-outline-custom btn-sm"
+                href="login.html"
+                role="button"
+                aria-current="page"
+              >
+                Entrar
+              </a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a
+                class="btn btn-primary-custom btn-sm ms-2"
+                href="cadastro.html"
+                role="button"
+              >
+                Cadastre-se
+              </a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================================
+       CONTEÚDO PRINCIPAL
+       ========================================= -->
+
+  <main class="container py-5">
+
+    <div
+      class="login-card mx-auto"
+      style="max-width: 420px;"
+    >
+
+      <h1>
+        Bem-vindo de volta!
+      </h1>
+
+
+      <!-- =====================================
+           FORMULÁRIO DE LOGIN
+           ===================================== -->
+
+      <form
+        id="formLogin"
+        novalidate
+        aria-describedby="statusMessage"
+      >
+
+        <!-- E-mail -->
+        <div class="mb-3">
+
+          <label
+            for="email"
+            class="form-label"
+          >
+            E-mail
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            autocomplete="email"
+            required
+            aria-required="true"
+          />
+
+          <div class="invalid-feedback">
+            Informe um e-mail válido.
+          </div>
+
+        </div>
+
+
+        <!-- Senha -->
+        <div class="mb-3 position-relative">
+
+          <label
+            for="senha"
+            class="form-label"
+          >
+            Senha
+          </label>
+
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            class="form-control"
+            autocomplete="current-password"
+            required
+            aria-required="true"
+          />
+
+
+          <!-- Mostrar / ocultar senha -->
+          <button
+            type="button"
+            aria-label="Mostrar senha"
+            id="toggleSenha"
+            class="position-absolute top-50 end-0 translate-middle-y me-2 btn btn-sm btn-outline-075C38"
+          >
+
+            <i
+              class="bi bi-eye"
+              aria-hidden="true"
+            ></i>
+
+          </button>
+
+
+          <div class="invalid-feedback">
+            Informe a senha.
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             BOTÃO ENTRAR
+             ===================================== -->
+
+        <div class="d-grid mt-4">
+
+          <button
+            type="submit"
+            class="btn btn-login"
+          >
+
+            <i
+              class="bi bi-box-arrow-in-right me-2"
+              aria-hidden="true"
+            ></i>
+
+            Entrar
+
+          </button>
+
+        </div>
+
+
+        <!-- Mensagem de retorno do login -->
+        <div
+          id="statusMessage"
+          class="text-center mt-3"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- Cadastro -->
+        <p class="text-center mt-3 mb-0">
+
+          Não possui cadastro?
+
+          <a href="cadastro.html">
+            Cadastre-se
+          </a>
+
+        </p>
+
+      </form>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       RODAPÉ
+       ========================================= -->
+
+  <footer
+    class="bg-white shadow-sm py-4 mt-5"
+  >
+
+    <div
+      class="container d-flex flex-wrap justify-content-between align-items-center small text-44515c"
+    >
+
+      <!-- Links principais -->
+      <nav aria-label="Links rápidos">
+
+        <ul class="nav">
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link px-2 text-44515c"
+              href="index.html"
+            >
+              Início
+            </a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link px-2 text-44515c"
+              href="projetos.html"
+            >
+              Projetos
+            </a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link px-2 text-44515c"
+              href="eventos.html"
+            >
+              Eventos
+            </a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link px-2 text-44515c"
+              href="ajudar.html"
+            >
+              Como Ajudar
+            </a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link px-2 text-44515c"
+              href="feedback.html"
+            >
+              Feedback
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- Links de participação -->
+      <nav aria-label="Participação">
+
+        <ul class="nav">
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link px-2 text-44515c"
+              href="cadastro.html"
+            >
+              Cadastro
+            </a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link active px-2 text-075C38 fw-semibold"
+              href="login.html"
+              aria-current="page"
+            >
+              Login
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- Copyright -->
+      <p class="mb-0 text-muted text-center w-100 mt-3 mt-lg-0">
+
+        © 2026 Instituto Mãos que Transformam.
+        Todos os direitos reservados.
+
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Bootstrap -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- JavaScript do projeto -->
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>

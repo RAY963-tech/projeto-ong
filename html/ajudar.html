@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Instituto Mãos que Transformam - Como Ajudar</title>
+
+<link href="../css/style.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F7FAF8;
+    color: #44515C;
+  }
+  h1, h2 {
+    color: #075C38;
+    font-weight: 700;
+  }
+  .help-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 2rem;
+  }
+  .help-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(7, 92, 56, 0.15);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .help-card:hover, .help-card:focus-within {
+    transform: translateY(-8px);
+    outline:none;
+  }
+  .help-card h3 {
+    color: #087541;
+    margin-bottom: 0.75rem;
+  }
+  .help-card p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .btn-sm-custom {
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    border: 2px solid #075C38;
+    color: #075C38;
+    background: transparent;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .btn-sm-custom:hover, .btn-sm-custom:focus {
+    background-color: #075C38;
+    color: white;
+    outline: none;
+  }
+  .right-image {
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(7, 92, 56, 0.15);
+  }
+  @media (min-width: 992px) {
+    .help-section {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+    .help-text {
+      flex: 1;
+    }
+    .help-image {
+      flex: 1;
+    }
+  }
+</style>
+
+</head>
+<body data-page="ajudar">
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" aria-label="Menu principal">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="../imagens/logo.png" alt="Logo Instituto Mãos que Transformam" height="48" />
+      <span class="ms-2 fs-5 fw-semibold text-075C38">Mãos que Transformam</span>
+    </a>
+    <button class="navbar-toggler" type="button" aria-label="Abrir menu" aria-controls="navbarMenu" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link active" href="ajudar.html">Como Ajudar</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-outline-custom btn-sm" href="login.html" role="button">Entrar</a></li>
+        <li class="nav-item"><a class="btn btn-primary-custom btn-sm ms-2" href="cadastro.html" role="button">Cadastre-se</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="container py-5">
+  <h1 class="mb-4 text-center">Como você pode ajudar</h1>
+  <div class="help-section">
+    <div class="help-text">
+      <div class="help-options" role="list">
+        <article class="help-card" tabindex="0" role="listitem">
+          <h3>Seja Voluntário</h3>
+          <p>Doe seu tempo, conhecimento e habilidades para ajudar nas ações e projetos do Instituto. Participação ativa fortalece a comunidade.</p>
+          <a href="cadastro.html" class="btn-sm-custom" aria-label="Quero ser voluntário">Quero ser voluntário</a>
+        </article>
+        <article class="help-card" tabindex="0" role="listitem">
+          <h3>Doe</h3>
+          <p>Contribua com alimentos, materiais ou recursos financeiros para garantir a continuidade das ações solidárias e educativas.</p>
+          <a href="cadastro.html" class="btn-sm-custom" aria-label="Quero doar">Quero doar</a>
+        </article>
+        <article class="help-card" tabindex="0" role="listitem">
+          <h3>Divulgue</h3>
+          <p>Ajude a levar os projetos para um público maior. Sua divulgação amplia o impacto social do Instituto.</p>
+          <a href="cadastro.html" class="btn-sm-custom" aria-label="Quero divulgar">Quero divulgar</a>
+        </article>
+        <article class="help-card" tabindex="0" role="listitem">
+          <h3>Seja Parceiro</h3>
+          <p>Empresas ou organizações podem ajudar apoiando financeiramente ou com recursos para fortalecer as iniciativas sociais.</p>
+          <a href="cadastro.html" class="btn-sm-custom" aria-label="Quero ser parceiro">Quero ser parceiro</a>
+        </article>
+      </div>
+    </div>
+    <div class="help-image d-none d-lg-block">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Mãos unidas representando solidariedade e união" class="right-image" loading="lazy" />
+      <div class="text-center mt-3 d-lg-none">
+        <a href="cadastro.html" class="btn btn-primary-custom btn-lg">Quero ajudar agora</a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-4 d-none d-lg-block">
+    <a href="cadastro.html" class="btn btn-primary-custom btn-lg">Quero ajudar agora</a>
+  </div>
+</main>
+
+<footer class="bg-white shadow-sm py-4 mt-5 text-center text-44515c small">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center">
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html" class="nav-link px-2">Início</a></li>
+        <li><a href="projetos.html" class="nav-link px-2">Projetos</a></li>
+        <li><a href="eventos.html" class="nav-link px-2">Eventos</a></li>
+        <li><a href="ajudar.html" class="nav-link px-2 active">Como ajudar</a></li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="nav">
+        <li><a href="cadastro.html" class="nav-link px-2">Cadastro</a></li>
+        <li><a href="login.html" class="nav-link px-2">Login</a></li>
+        <li><a href="feedback.html" class="nav-link px-2">Feedback</a></li>
+      </ul>
+    </nav>
+    <p class="w-100 mt-3 mb-0">&copy; 2026 Instituto Mãos que Transformam. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>

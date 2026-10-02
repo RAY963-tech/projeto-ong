@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Instituto Mãos que Transformam - Feedback</title>
+
+  <link href="../css/style.css" rel="stylesheet" />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #F7FAF8;
+      color: #44515C;
+    }
+
+    h1,
+    h2 {
+      color: #075C38;
+      font-weight: 700;
+    }
+
+    form {
+      max-width: 500px;
+    }
+
+    #feedbackList {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .feedback-item {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgb(7 92 56 / 0.15);
+    }
+
+    .star-rating {
+      color: #0A9650;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body data-page="feedback">
+
+  <header>
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm"
+      aria-label="Menu principal"
+    >
+
+      <div class="container">
+
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="index.html"
+        >
+          <img
+            src="../imagens/logo.png"
+            alt="Logo Instituto Mãos que Transformam"
+            height="48"
+          />
+
+          <span class="ms-2 fs-5 fw-semibold text-075C38">
+            Mãos que Transformam
+          </span>
+        </a>
+
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Abrir menu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div
+          class="collapse navbar-collapse"
+          id="navbarMenu"
+        >
+
+          <ul class="navbar-nav ms-auto align-items-center">
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="index.html"
+              >
+                Início
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="projetos.html"
+              >
+                Projetos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="eventos.html"
+              >
+                Eventos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="ajudar.html"
+              >
+                Como Ajudar
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="feedback.html"
+              >
+                Feedback
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-3">
+              <a
+                class="btn btn-outline-custom btn-sm"
+                href="login.html"
+                role="button"
+              >
+                Entrar
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="btn btn-primary-custom btn-sm ms-2"
+                href="cadastro.html"
+                role="button"
+              >
+                Cadastre-se
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <main class="container py-5 d-lg-flex gap-5">
+
+    <section
+      class="flex-grow-1"
+      aria-label="Formulário de feedback"
+    >
+
+      <h1>
+        Seu feedback é importante
+      </h1>
+
+
+      <form
+        id="formFeedback"
+        novalidate
+        aria-describedby="statusMessage"
+      >
+
+        <div class="mb-3">
+
+          <label
+            for="nome"
+            class="form-label"
+          >
+            Nome
+          </label>
+
+          <input
+            id="nome"
+            name="nome"
+            type="text"
+            class="form-control"
+            required
+          />
+
+          <div class="invalid-feedback">
+            Por favor, informe seu nome.
+          </div>
+
+        </div>
+
+
+        <div class="mb-3">
+
+          <label
+            for="email"
+            class="form-label"
+          >
+            E-mail
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="form-control"
+            required
+          />
+
+          <div class="invalid-feedback">
+            Por favor, informe um e-mail válido.
+          </div>
+
+        </div>
+
+
+        <div class="mb-3">
+
+          <label
+            for="avaliacao"
+            class="form-label"
+          >
+            Avaliação
+          </label>
+
+          <select
+            id="avaliacao"
+            name="avaliacao"
+            class="form-select"
+            required
+          >
+
+            <option
+              value=""
+              disabled
+              selected
+            >
+              Selecione a avaliação
+            </option>
+
+            <option value="5">
+              5 - Excelente
+            </option>
+
+            <option value="4">
+              4 - Muito bom
+            </option>
+
+            <option value="3">
+              3 - Bom
+            </option>
+
+            <option value="2">
+              2 - Regular
+            </option>
+
+            <option value="1">
+              1 - Ruim
+            </option>
+
+          </select>
+
+          <div class="invalid-feedback">
+            Por favor, selecione uma avaliação.
+          </div>
+
+        </div>
+
+
+        <div class="mb-3">
+
+          <label
+            for="mensagem"
+            class="form-label"
+          >
+            Mensagem
+          </label>
+
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="4"
+            class="form-control"
+            required
+          ></textarea>
+
+          <div class="invalid-feedback">
+            Por favor, escreva sua mensagem.
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-enviar-feedback"
+        >
+          <i
+            class="bi bi-send me-2"
+            aria-hidden="true"
+          ></i>
+          Enviar feedback
+        </button>
+
+
+        <div
+          id="statusMessage"
+          class="mt-3"
+          aria-live="polite"
+        ></div>
+
+      </form>
+
+    </section>
+
+
+    <section
+      class="flex-grow-1"
+      aria-label="Lista de feedbacks"
+    >
+
+      <h2>
+        Feedbacks enviados
+      </h2>
+
+      <div
+        id="feedbackList"
+        tabindex="0"
+        aria-live="polite"
+        class="mt-3"
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <footer
+    class="bg-white shadow-sm py-4 mt-5 text-center text-44515c small"
+  >
+
+    <div
+      class="container d-flex flex-wrap justify-content-between align-items-center"
+    >
+
+      <nav aria-label="Links rápidos">
+
+        <ul class="nav">
+
+          <li>
+            <a
+              href="index.html"
+              class="nav-link px-2"
+            >
+              Início
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="projetos.html"
+              class="nav-link px-2"
+            >
+              Projetos
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="eventos.html"
+              class="nav-link px-2"
+            >
+              Eventos
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="ajudar.html"
+              class="nav-link px-2"
+            >
+              Como ajudar
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="feedback.html"
+              class="nav-link px-2 active"
+            >
+              Feedback
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <nav aria-label="Participação">
+
+        <ul class="nav">
+
+          <li>
+            <a
+              href="cadastro.html"
+              class="nav-link px-2"
+            >
+              Cadastro
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="login.html"
+              class="nav-link px-2"
+            >
+              Login
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <p class="w-100 mt-3 mb-0">
+        &copy; 2026 Instituto Mãos que Transformam.
+        Todos os direitos reservados.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>
